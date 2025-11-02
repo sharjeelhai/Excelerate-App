@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Excelerate App
 
 A cross-platform mobile application built using **Flutter** and **Dart**, developed as part of the *Excelerate Internship Program*.  
@@ -139,3 +140,6 @@ Summary
 
 This marks the first stable release (v1.0.0) of the Excelerate App —
 a fully functional Flutter-based cross-platform app built with clean design, validated forms, mock API integration, and a polished UI aligned with the brand identity.
+=======
+# Excelerate-App
+>>>>>>> ed07d3c89c6ca10bf4a1155cba8edd62910e5c87
