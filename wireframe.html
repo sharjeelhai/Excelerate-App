@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excelerate Mobile Wireframes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .phone-frame {
+            width: 100%;
+            max-width: 375px;
+            height: 700px;
+            background-color: #fff;
+            border: 12px solid #333;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0;
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+        .screen.active {
+            display: flex;
+        }
+        .app-bar {
+            height: 56px;
+            background-color: #0d47a1; /* Deep Blue from Excelerate theme */
+            color: white;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .nav-button {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .nav-button:hover {
+            background-color: #1565c0;
+        }
+        .low-fidelity-box {
+            background-color: #e0e0e0;
+            border: 1px solid #999;
+            border-radius: 4px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .low-fidelity-text {
+            color: #333;
+            font-size: 12px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        .progress-bar-placeholder {
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        .progress-fill {
+            width: 65%; /* Placeholder progress */
+            height: 100%;
+            background-color: #1976d2; /* Brighter blue for progress */
+        }
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: #bbdefb; /* Light Blue */
+            border-radius: 12px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0d47a1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <h1 class="text-2xl font-bold mb-4">Excelerate Wireframe Mockup</h1>
+
+    <div class="flex flex-wrap justify-center gap-2 mb-6 p-4 bg-white rounded-xl shadow-lg">
+        <button class="nav-button" onclick="showScreen('login')">Login</button>
+        <button class="nav-button" onclick="showScreen('home')">Home</button>
+        <button class="nav-button" onclick="showScreen('programs')">Programs</button>
+        <button class="nav-button" onclick="showScreen('details')">Details</button>
+        <button class="nav-button" onclick="showScreen('feedback')">Feedback</button>
+    </div>
+
+    <div class="phone-frame">
+        <!-- 1. Login Screen -->
+        <div id="login" class="screen active p-8 justify-center items-center">
+            <div class="logo-placeholder">EXCELERATE</div>
+            <h2 class="text-lg font-semibold text-center mb-6 text-gray-700">Learner/Admin Sign In</h2>
+
+            <div class="low-fidelity-box bg-white border-2 border-gray-300">Email / User ID</div>
+            <div class="low-fidelity-box bg-white border-2 border-gray-300">Password</div>
+
+            <button class="w-full h-10 mt-4 rounded-lg font-semibold text-white bg-blue-700 shadow-md">
+                LOGIN
+            </button>
+            
+            <!-- OR Separator -->
+            <div class="my-4 w-full flex items-center">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="flex-shrink mx-4 text-gray-500 text-xs font-semibold">OR</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+            </div>
+
+            <!-- Google Sign-In Button -->
+            <button class="w-full h-10 rounded-lg font-semibold text-blue-700 bg-white border-2 border-blue-700 shadow-md flex items-center justify-center">
+                <span class="text-lg mr-2 font-bold text-red-500">G</span> Sign in with Google
+            </button>
+
+            <p class="text-sm text-center mt-2 text-blue-600 cursor-pointer">Forgot Password?</p>
+            <p class="text-xs text-center mt-6 text-gray-500">Need an account? Sign up (Admin/Learner)</p>
+        </div>
+
+        <!-- 2. Home Screen -->
+        <div id="home" class="screen">
+            <div class="app-bar">
+                <span class="text-xl">☰</span>
+                <span class="text-lg font-semibold">Home</span>
+                <span class="text-xl">👤</span>
+            </div>
+            <div class="p-4 flex flex-col gap-4">
+                <p class="text-xl font-bold text-gray-800">Welcome, Exceller!</p>
+
+                <!-- Progress Summary Card -->
+                <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                    <p class="text-sm font-semibold text-blue-800 mb-1">Your Progress Summary</p>
+                    <p class="text-xs text-gray-600">Overall Completion: <span class="font-bold text-base">65%</span></p>
+                    <div class="progress-bar-placeholder mt-2">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Announcements -->
+                <h3 class="text-lg font-semibold text-gray-700 mt-2">📢 Announcements</h3>
+                <div class="low-fidelity-box bg-yellow-50 border-yellow-300 h-10 text-left px-3 text-sm font-medium text-yellow-800">
+                    *Action: Compliance Survey due (Click to view)*
+                </div>
+
+                <!-- Assigned Programs -->
+                <h3 class="text-lg font-semibold text-gray-700 mt-2">Assigned & In-Progress</h3>
+                <div class="low-fidelity-box bg-gray-100 h-16 flex-col items-start px-3 py-2 text-left">
+                    <p class="font-semibold text-sm">Virtual Internship: Data Viz</p>
+                    <p class="text-xs text-gray-500">Status: In Progress (40%)</p>
+                    <div class="progress-bar-placeholder w-full mt-1"><div class="progress-fill" style="width: 40%; background-color: #2ecc71;"></div></div>
+                </div>
+                <div class="low-fidelity-box bg-gray-100 h-16 flex-col items-start px-3 py-2 text-left">
+                    <p class="font-semibold text-sm">Power Skill Course: Leadership</p>
+                    <p class="text-xs text-gray-500">Status: Assigned</p>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="app-bar bg-white text-gray-500 justify-around mt-auto shadow-inner border-t border-gray-200">
+                <span class="text-blue-700 font-bold">🏠 Home</span>
+                <span>📚 Programs</span>
+                <span>👤 Profile</span>
+                <span>⋮ More</span>
+            </div>
+        </div>
+
+        <!-- 3. Program Listing Screen -->
+        <div id="programs" class="screen">
+            <div class="app-bar">
+                <span class="text-xl">☰</span>
+                <span class="text-lg font-semibold">Programs & Courses</span>
+                <span class="text-xl">⚙</span>
+            </div>
+            <div class="p-4 flex flex-col gap-3">
+                <div class="low-fidelity-box bg-white border-2 border-blue-400 h-10 text-left px-3 text-gray-500">
+                    🔍 Search Programs...
+                </div>
+
+                <!-- Program List Items -->
+                <h3 class="text-sm font-semibold text-gray-500 mt-2">VIRTUAL INTERNSHIPS (3)</h3>
+                <div class="low-fidelity-box bg-gray-100 h-16 flex-col items-start px-3 py-2 text-left border-l-4 border-blue-500">
+                    <p class="font-semibold text-sm">Digital Marketing Internship</p>
+                    <p class="text-xs text-gray-500">Status: In Progress (60%)</p>
+                </div>
+                <h3 class="text-sm font-semibold text-gray-500 mt-4">MASTERCLASSES (2)</h3>
+                <div class="low-fidelity-box bg-gray-100 h-16 flex-col items-start px-3 py-2 text-left border-l-4 border-green-500">
+                    <p class="font-semibold text-sm">AI in Business Strategy</p>
+                    <p class="text-xs text-gray-500">Status: Completed</p>
+                </div>
+                <h3 class="text-sm font-semibold text-gray-500 mt-4">POWER SKILL COURSES (5)</h3>
+                <div class="low-fidelity-box bg-gray-100 h-16 flex-col items-start px-3 py-2 text-left border-l-4 border-gray-500">
+                    <p class="font-semibold text-sm">Essential 21st Century Skills</p>
+                    <p class="text-xs text-gray-500">Status: Assigned</p>
+                </div>
+
+                <div class="text-center text-sm text-gray-500 mt-4">--- End of List ---</div>
+
+            </div>
+            <!-- Bottom Navigation -->
+            <div class="app-bar bg-white text-gray-500 justify-around mt-auto shadow-inner border-t border-gray-200">
+                <span>🏠 Home</span>
+                <span class="text-blue-700 font-bold">📚 Programs</span>
+                <span>👤 Profile</span>
+                <span>⋮ More</span>
+            </div>
+        </div>
+
+        <!-- 4. Program Details Screen -->
+        <div id="details" class="screen">
+            <div class="app-bar">
+                <span class="text-xl">←</span>
+                <span class="text-lg font-semibold">Program Details</span>
+                <span class="text-xl">⋮</span>
+            </div>
+            <div class="p-4 flex flex-col gap-3">
+                <h1 class="text-xl font-bold text-gray-800">Cybersecurity Virtual Internship</h1>
+                <p class="text-sm text-gray-500">4 Weeks | Advanced Level</p>
+
+                <!-- Progress Bar -->
+                <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                    <p class="text-sm font-semibold text-blue-800 mb-1">Your Progress: Module 2 of 4</p>
+                    <div class="progress-bar-placeholder mt-1"><div class="progress-fill" style="width: 50%; background-color: #2ecc71;"></div></div>
+                    <p class="text-xs text-gray-600 mt-1">50% Complete</p>
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-700 mt-2">Description</h3>
+                <div class="low-fidelity-text h-16 bg-gray-100 p-2 border-l-4 border-blue-300">
+                    Placeholder text describing program content, objectives, and real-world skills gained (e.g., 21st-century skills).
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-700 mt-2">Program Modules</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li class="text-sm text-green-600">✓ 1. Intro to Threat Modeling</li>
+                    <li class="text-sm font-bold text-blue-700">▶ 2. Network Security Deep Dive (Current)</li>
+                    <li class="text-sm text-gray-500">□ 3. Defensive Coding Practices</li>
+                    <li class="text-sm text-gray-500">□ 4. Incident Response Planning</li>
+                </ul>
+
+                <button class="w-full h-10 mt-6 rounded-lg font-semibold text-white bg-red-500 shadow-md" onclick="showScreen('feedback')">
+                    SUBMIT PROGRAM FEEDBACK
+                </button>
+                <button class="w-full h-10 mt-2 rounded-lg font-semibold text-white bg-blue-700 shadow-md">
+                    CONTINUE MODULE 2
+                </button>
+            </div>
+        </div>
+
+        <!-- 5. Feedback Form Screen -->
+        <div id="feedback" class="screen">
+            <div class="app-bar">
+                <span class="text-xl">←</span>
+                <span class="text-lg font-semibold">Submit Feedback</span>
+                <span class="text-xl"></span>
+            </div>
+            <div class="p-4 flex flex-col gap-4">
+                <h1 class="text-xl font-bold text-gray-800">Feedback for Cybersecurity Internship</h1>
+                <p class="text-sm text-gray-500">Your honest feedback helps us improve our experiential learning platform.</p>
+
+                <h3 class="text-base font-semibold text-gray-700">1. Program Rating (1-5 Stars)</h3>
+                <div class="text-xl text-yellow-500">★ ★ ★ ★ ☆</div>
+
+                <h3 class="text-base font-semibold text-gray-700">2. What did you like most?</h3>
+                <div class="low-fidelity-box bg-white border-2 border-gray-300 h-20 items-start p-2 text-left">
+                    [ Multi-line text input area ]
+                </div>
+
+                <h3 class="text-base font-semibold text-gray-700">3. Program Type (Dropdown)</h3>
+                <div class="low-fidelity-box bg-white border-2 border-gray-300">
+                    Virtual Internship 🔽
+                </div>
+
+                <button class="w-full h-10 mt-6 rounded-lg font-semibold text-white bg-blue-700 shadow-md">
+                    SUBMIT FEEDBACK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+        // Initialize with the Login screen
+        document.addEventListener('DOMContentLoaded', () => {
+            showScreen('login');
+        });
+    </script>
+</body>
+</html>
